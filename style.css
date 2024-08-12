@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap");
+
+/* .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+} */
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  nav ul {
+    transition:
+      transform 0.3s,
+      visibility 0.3s,
+      opacity 0.3s;
+  }
+
+  [data-state="closed"] {
+    transform: translateY(2rem);
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  [data-state="open"] {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+    z-index: 999;
+  }
+
+  body:has([data-state="open"]) main {
+    z-index: -1;
+  }
+}
+
+#overlay {
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
+}
+
+[data-bookmark="yes"] > span:nth-child(2) {
+  color: hsl(176, 72%, 28%);
+  background-color: hsla(176, 50%, 47%, 0.091);
+}
+
+[data-bookmark="yes"] > span:nth-child(1) {
+  color: white;
+  background-color: hsl(176, 50%, 47%);
+}
+
+[data-bookmark="yes"]:hover > span:nth-child(1) {
+  background-color: hsl(176, 72%, 28%);
+}
+
+[name="close-sharp"] {
+  --ionicon-stroke-width: 5rem;
+}
+
+section[data-clicked="yes"] {
+  border-color: hsl(176, 50%, 47%);
+}
+
+section[data-clicked="yes"] [data-checker]::after {
+  transform: scale(0.6);
+}
+
+section[data-clicked="yes"]:hover [data-checker],
+section[data-clicked="yes"]:focus-visible [data-checker] {
+  border-color: rgb(161, 161, 161);
+}
+
+section[data-clicked="yes"]:hover h4,
+section[data-clicked="yes"]:focus-visible h4 {
+  color: black;
+}
+
+/* accordions */
+[data-checkout] {
+  display: grid;
+  grid-template-rows: 0fr;
+}
+
+[data-checkout] > div {
+  overflow: hidden;
+}
+
+[data-clicked="yes"] [data-checkout] {
+  border-top: 1px solid hsl(0, 0%, 79%);
+  padding-block: 1.5rem;
+  grid-template-rows: 1fr;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+[data-available="no"] {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+[data-selection-modal] > section {
+  max-width: 800px;
+}
+[data-success-modal] > section {
+  max-width: 600px;
+}

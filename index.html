@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Crowdfunding product page</title>
+
+    <!-- Links to external CSS & JS -->
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script defer src="script.js"></script>
+
+    <!-- TailwindCSS cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="flex flex-col items-center bg-gray-50 min-h-dvh relative isolate"
+  >
+    <!-- background image -->
+    <picture class="absolute top-0 left-0 right-0 h-72 -z-20">
+      <source
+        media="(min-width: 500px)"
+        srcset="./images/image-hero-desktop.jpg"
+        class="object-cover h-full w-full"
+      />
+      <img
+        src="./images/image-hero-mobile.jpg"
+        alt=""
+        class="object-cover h-full w-full"
+      />
+    </picture>
+    <!-- Header Section -->
+    <header
+      class="w-full min-h-72 p-8 relative isolate bg-center bg-cover bg-no-repeat after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/65 after:to-transparent after:z-[-1]"
+    >
+      <!-- Overlay bg -->
+      <div
+        id="overlay"
+        class="absolute invisible min-h-dvh w-screen bg-gradient-to-b from-black/75 to-transparent top-0 left-[50%] translate-x-[-50%]"
+      ></div>
+      <!-- Navigation & Logo Section -->
+      <nav class="flex items-center justify-between relative gap-12">
+        <!-- Logo -->
+        <img src="./images/logo.svg" alt="crowdfund" class="order-1" />
+
+        <!-- List Items -->
+        <ul
+          data-state="closed"
+          class="flex mid:flex-row flex-col gap-0 mid:gap-8 bg-white mid:bg-transparent rounded-2xl mid:text-white absolute mid:relative top-[240%] mid:top-0 left-0 right-0 divide-y mid:divide-y-0 order-2 max-[700px]:order-3 [&>li>a]:px-8 mid:[&>li>a]:px-0 [&>li>a]:py-5 mid:[&>li>a]:py-0 [&>li]:text-lg mid:[&>li]:text-base"
+        >
+          <li>
+            <a
+              href="#about"
+              class="inline-block w-full h-full small:text-center"
+              >About</a
+            >
+          </li>
+          <li>
+            <a href="#" class="inline-block w-full h-full small:text-center"
+              >Discover</a
+            >
+          </li>
+          <li>
+            <a href="#" class="inline-block w-full h-full small:text-center"
+              >Get Started</a
+            >
+          </li>
+        </ul>
+
+        <!-- Hamburger btn -->
+        <button
+          id="menu-btn"
+          class="appearance-none bg-transparent mid:hidden order-3 max-[700px]:order-2"
+        >
+          <img
+            class="pointer-events-none"
+            id="open-menu"
+            src="./images/icon-hamburger.svg"
+            alt="menu"
+          />
+        </button>
+      </nav>
+    </header>
+    <!-- End of Header section -->
+    <!-- Main section -->
+    <main
+      class="flex flex-col gap-8 w-11/12 max-w-[700px] min-w-[280px] -translate-y-10 [&>section]:bg-white [&>section]:rounded-xl [&>section]:border"
+    >
+      <!-- Single section -->
+      <section class="relative pt-14 pb-10 px-8">
+        <img
+          src="./images/logo-mastercraft.svg"
+          alt="Mastercraft"
+          class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        />
+        <div class="space-y-4 text-center">
+          <h1 class="text-2xl font-semibold">
+            Mastercraft Bamboo Monitor Riser
+          </h1>
+          <p class="text-dark_gray">
+            A beautiful & handcrafted monitor stand to reduce neck and eye
+            strain.
+          </p>
+        </div>
+        <div
+          class="flex mt-10 items-center justify-between gap-6 font-semibold"
+        >
+          <button
+            id="back-this-btn"
+            class="px-8 rounded-full py-3 text-white bg-mod_cyan transition-colors duration-200 hover:bg-dark_cyan min-w-max"
+          >
+            Back this project
+          </button>
+          <!-- Bookmark btn -->
+          <button
+            id="bookmark-btn"
+            data-bookmark="no"
+            class="flex items-center h-12 min-[550px]:translate-x-10 text-dark_gray group [&>span]:transition-all [&>span]:duration-200"
+          >
+            <span
+              class="z-10 grid place-content-center rounded-full h-full aspect-square bg-[#2f2f2f] text-xl group-hover:bg-[#2f2f2f]/85"
+              ><ion-icon name="bookmark-sharp"></ion-icon></span
+            ><span
+              class="bg-gray-100 h-full grid place-content-center pl-12 pr-5 -translate-x-10 rounded-full max-[550px]:hidden"
+              >Bookmark</span
+            >
+          </button>
+        </div>
+      </section>
+      <!-- End of Single section -->
+      <!-- Single section -->
+      <section class="py-10 px-8 space-y-8">
+        <div
+          id="interactive-info"
+          class="grid grid_break:grid-cols-3 grid_break:divide-y-0 grid_break:text-left grid_break:divide-x content-between justify-center divide-y text-center"
+        >
+          <!-- single block -->
+          <div class="space-y-1 pb-4 grid_break:pb-0 grid_break:pr-4">
+            <p id="total-backed" class="text-3xl font-bold">$69,914</p>
+            <p class="text-dark_gray leading-tight">of $100,000 backed</p>
+          </div>
+          <!-- end of single block -->
+          <!-- single block -->
+          <div class="space-y-1 py-4 grid_break:py-0 grid_break:px-4">
+            <p id="total-backers" class="text-3xl font-bold">3,007</p>
+            <p class="text-dark_gray leading-tight">total backers</p>
+          </div>
+          <!-- end of single block -->
+          <!-- single block -->
+          <div class="space-y-1 py-4 grid_break:py-0 grid_break:px-4">
+            <p id="days-left" class="text-3xl font-bold">56</p>
+            <p class="text-dark_gray">days left</p>
+          </div>
+          <!-- end of single block -->
+        </div>
+
+        <!-- progress bar -->
+        <div
+          class="h-4 w-full rounded-full bg-gray-200 relative overflow-hidden"
+        >
+          <div
+            id="progess-bar"
+            class="bg-mod_cyan absolute h-full rounded-full w-4/5 transition-transform duration-200 shadow-lg"
+          ></div>
+        </div>
+        <!-- end of progress bar -->
+      </section>
+      <!-- End of Single section -->
+      <!-- Single section -->
+      <section id="about" class="py-10 px-8 space-y-8 text-dark_gray">
+        <h2 class="text-xl font-semibold text-black">About this project</h2>
+        <p>
+          The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform
+          that elevates your screen to a more comfortable viewing height.
+          Placing your monitor at eye level has the potential to improve your
+          posture and make you more comfortable while at work, helping you stay
+          focused on the task at hand.
+        </p>
+        <p>
+          Featuring artisan craftsmanship, the simplicity of design creates
+          extra desk space below your computer to allow notepads, pens, and USB
+          sticks to be stored under the stand.
+        </p>
+        <!-- single block -->
+        <section
+          class="p-6 rounded-md border space-y-5 transition-shadow duration-200 hover:shadow-inner"
+        >
+          <header
+            class="flex grid_break:flex-row flex-col justify-between text-lg gap-3"
+          >
+            <h3 class="text-black font-semibold">Bamboo Stand</h3>
+            <span class="text-mod_cyan text-base">Pledge $25 or more</span>
+          </header>
+          <p>
+            You get an ergonomic stand made of natural bamboo. You've helped us
+            launch our promotional campaign, and you'll be added to a special
+            Backer member list.
+          </p>
+          <footer
+            class="flex grid_break:flex-row flex-col justify-between gap-5"
+          >
+            <div id="remaining" class="flex gap-1.5 items-center">
+              <span id="bamboo" class="text-3xl font-semibold text-black"
+                >101</span
+              >
+              <span class="text-sm">left</span>
+            </div>
+
+            <button
+              class="px-8 rounded-full py-3 text-white bg-mod_cyan transition-colors duration-200 hover:bg-dark_cyan min-w-max max-w-max"
+            >
+              Select Reward
+            </button>
+          </footer>
+        </section>
+        <!-- end of single block -->
+        <!-- single block -->
+        <section
+          class="p-6 rounded-md border space-y-5 transition-shadow duration-200 hover:shadow-inner"
+        >
+          <header
+            class="flex grid_break:flex-row flex-col justify-between text-lg gap-3"
+          >
+            <h3 class="text-black font-semibold">Black Edition Stand</h3>
+            <span class="text-mod_cyan text-base">Pledge $75 or more</span>
+          </header>
+          <p>
+            You get a Black Special Edition computer stand and a personal thank
+            you. You'll be added to our Backer member list. Shipping is
+            included.
+          </p>
+          <footer
+            class="flex grid_break:flex-row flex-col justify-between gap-5"
+          >
+            <div id="remaining" class="flex gap-1.5 items-center">
+              <span
+                id="black-edition-stand"
+                class="text-3xl font-semibold text-black"
+                >64</span
+              >
+              <span class="text-sm">left</span>
+            </div>
+
+            <button
+              class="px-8 rounded-full py-3 text-white bg-mod_cyan transition-colors duration-200 hover:bg-dark_cyan min-w-max max-w-max"
+            >
+              Select Reward
+            </button>
+          </footer>
+        </section>
+        <!-- end of single block -->
+        <!-- single block -->
+        <section
+          class="p-6 rounded-md border space-y-5 pointer-events-none opacity-60"
+        >
+          <header
+            class="flex grid_break:flex-row flex-col justify-between text-lg gap-3"
+          >
+            <h3 class="text-dark_gray font-semibold">
+              Mahogany Special Edition
+            </h3>
+            <a href="#" class="text-mod_cyan text-base">Pledge $200 or more</a>
+          </header>
+          <p>
+            You get two Special Edition Mahogany stands, a Backer T-Shirt, and a
+            personal thank you. You'll be added to our Backer member list.
+            Shipping is included.
+          </p>
+          <footer
+            class="flex grid_break:flex-row flex-col justify-between gap-5"
+          >
+            <div id="remaining" class="flex gap-1.5 items-center">
+              <span id="mahogany" class="text-3xl font-semibold text-black"
+                >0</span
+              >
+              <span class="text-sm">left</span>
+            </div>
+
+            <button
+              class="px-8 rounded-full py-3 text-white bg-dark_gray min-w-max max-w-max"
+            >
+              Out of Stock
+            </button>
+          </footer>
+        </section>
+        <!-- end of single block -->
+      </section>
+      <!-- End of Single section -->
+    </main>
+    <!-- End of Main section -->
+
+    <!-- Selection modal start -->
+    <dialog data-selection-modal class="rounded-xl backdrop:bg-black/40">
+      <section class="py-8 px-6 text-dark_gray flex flex-col gap-5 rounded-xl">
+        <header class="flex gap-7 justify-between">
+          <h2 class="text-xl text-black font-semibold">Back this project</h2>
+          <button
+            id="close-selection-modal"
+            class="appearance-none text-2xl font-bold text-gray-400 grid place-content-center"
+          >
+            <ion-icon name="close-sharp"></ion-icon>
+          </button>
+        </header>
+        <p>
+          Want to support us in bringing Mastercraft Bamboo Monitor Riser out in
+          the world?
+        </p>
+        <!-- blocks sections -->
+        <section
+          id="blocks"
+          class="flex flex-col gap-5 [&>section]:border [&>section]:rounded-md [&>section]:flex [&>section]:flex-col [&>section]:gap-3"
+        >
+          <!-- single block -->
+
+          <!-- end of single block -->
+        </section>
+      </section>
+    </dialog>
+    <!-- Selection modal end -->
+
+    <!-- Success modal start -->
+    <dialog data-success-modal class="rounded-xl backdrop:bg-black/40">
+      <section class="flex flex-col items-center gap-5 p-8">
+        <img src="./images/icon-check.svg" alt="" class="size-16" />
+        <div class="text-center space-y-3">
+          <h4 class="text-xl text-black font-semibold">
+            Thanks for your support!
+          </h4>
+          <p class="text-dark_gray">
+            Your pledge brings us one step closer to sharing Mastercraft Bamboo
+            Monitor Riser worldwide. You will get an email once our campaign is
+            completed.
+          </p>
+        </div>
+        <button
+          id="got-it"
+          class="px-8 rounded-full py-3 text-white bg-mod_cyan transition-colors duration-200 hover:bg-dark_cyan min-w-max max-w-max"
+        >
+          Got it!
+        </button>
+      </section>
+    </dialog>
+
+    <!-- Success modal end -->
+
+    <!-- Ion icons script -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
